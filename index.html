@@ -124,10 +124,9 @@ body {
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
 }
 
-/* PERBAIKAN UKURAN LOGO - Nembak ke alt text biar anti gagal */
-.logo-item img[alt="Logo Yasarini"] { height: 65px !important; }
-.logo-item img[alt="Logo FESA"] { height: 100px !important; }
-.logo-item img[alt="Logo AMSO"] { height: 100px !important; }
+.logo-item img[src="yasarini.png"] { height: 65px !important; }
+.logo-item img[src="fesa.png"] { height: 100px !important; }
+.logo-item img[src="amso.png"] { height: 100px !important; }
 
 .hero h1 {
     font-size: clamp(38px, 6vw, 68px);
@@ -157,7 +156,7 @@ body {
 ========================= */
 
 .container {
-    max-width: 1150px;
+    max-width: 900px; /* Lebar dikit dikecilin biar alur kebawahnya lebih fokus & rapi */
     margin: auto;
     padding: 35px 20px 80px;
 }
@@ -226,14 +225,6 @@ body {
 
     cursor: pointer;
     transition: .25s;
-
-    /* RATA TENGAH SIMETRIS */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100%; 
 }
 
 .phase:hover {
@@ -302,23 +293,31 @@ body {
 }
 
 /* =========================
-   AGENDA GRID
+   AGENDA ALUR (VERTICAL FLOW)
 ========================= */
 
 .agenda {
-    margin-top: 18px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.agenda-item-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card {
+    width: 100%;
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--border);
     border-radius: 17px;
-    padding: 20px;
+    padding: 22px 25px;
 
     transition: .25s;
     position: relative;
@@ -354,13 +353,13 @@ body {
 
 .card-date {
     margin-top: 7px;
-    font-size: 12px;
+    font-size: 13px;
     color: var(--blue2);
     font-weight: 800;
 }
 
 .card h3 {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.4;
     margin-top: 9px;
     color: var(--text);
@@ -369,7 +368,7 @@ body {
 .card p {
     margin-top: 7px;
     color: var(--muted);
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.5;
 }
 
@@ -378,10 +377,28 @@ body {
     margin-top: 12px;
     background: rgba(34, 211, 238, 0.15);
     color: var(--gold);
-    padding: 4px 8px;
+    padding: 4px 10px;
     border-radius: 20px;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 800;
+}
+
+/* IKON PANAH ALUR KEBWAH */
+.flow-arrow {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue2);
+    font-size: 14px;
+    opacity: 0.6;
+    animation: bounceArrow 2s infinite;
+}
+
+@keyframes bounceArrow {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(5px); }
+    60% { transform: translateY(3px); }
 }
 
 /* =========================
@@ -414,9 +431,6 @@ footer p {
     .phases {
         grid-template-columns: repeat(2, 1fr);
     }
-    .agenda {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 @media(max-width: 600px) {
@@ -426,8 +440,7 @@ footer p {
     .hero h1 {
         margin-top: 10px;
     }
-    .phases,
-    .agenda {
+    .phases {
         grid-template-columns: 1fr;
     }
     .timeline-header {
@@ -454,7 +467,7 @@ footer p {
 
     <!-- TOMBOL KEMBALI KE HALAMAN UTAMA -->
     <a href="https://amso-fesa.github.io/AMSO-2026/" class="btn-back">
-        <i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda
+        <i class="fa-solid fa-arrow-left"></i> Kembali
     </a>
 
     <div class="hero-inner">
@@ -462,21 +475,21 @@ footer p {
         <!-- LOGO GROUP SEBAGAI PENGGANTI TEKS -->
         <div class="logo-group">
             <div class="logo-item">
-                <img src="https://raw.githubusercontent.com/AMSO-FESA/AMSO-2026/main/yasarini.png" alt="Logo Yasarini" title="Yayasan Ardhya Garini">
+                <img src="yasarini.png" alt="Logo Yasarini" title="Yayasan Ardhya Garini">
             </div>
             <div class="logo-item">
-                <img src="https://raw.githubusercontent.com/AMSO-FESA/AMSO-2026/main/fesa.png" alt="Logo FESA" title="Festival Edukasi Sekolah Angkasa">
+                <img src="fesa.png" alt="Logo FESA" title="Festival Edukasi Sekolah Angkasa">
             </div>
             <div class="logo-item">
-                <img src="https://raw.githubusercontent.com/AMSO-FESA/AMSO-2026/main/amso.png" alt="Logo AMSO" title="Angkasa Mathematic and Science Olympiad">
+                <img src="amso.png" alt="Logo AMSO" title="Angkasa Mathematic and Science Olympiad">
             </div>
         </div>
 
         <h1><span class="text-neon">TIMELINE AMSO 2026</span></h1>
 
         <p class="hero-desc">
-            RANGKAIAN LENGKAP PELAKSANAAN AMSO 2026,
-            DARI TAHAP TRYOUT HINGGA PENGUMUMAN PEMENANG
+            Rangkaian lengkap pelaksanaan AMSO 2026,
+            dari tahap tryout hingga pengumuman pemenang
         </p>
     </div>
 </header>
@@ -490,7 +503,7 @@ footer p {
 
 <section class="progress-section">
     <h2 class="section-title">
-        PROGRESS AMSO 2026
+        Progress AMSO 2026
     </h2>
     <div class="progress-bar">
         <div class="progress-fill" id="progress"></div>
@@ -508,27 +521,32 @@ footer p {
 
 <section class="phase-section">
     <h2 class="section-title">
-        TAHAPAN UTAMA
+        Tahapan Utama
     </h2>
     <div class="phases">
         <div class="phase">
-            <h3>TRYOUT</h3>
+            <div class="phase-number">01</div>
+            <h3>Tryout</h3>
             <p>18 – 28 Agustus</p>
         </div>
         <div class="phase">
-            <h3>SELEKSI SEKOLAH</h3>
+            <div class="phase-number">02</div>
+            <h3>Seleksi Sekolah</h3>
             <p>8 – 11 September</p>
         </div>
         <div class="phase">
-            <h3>PENYISIHAN</h3>
+            <div class="phase-number">03</div>
+            <h3>Penyisihan</h3>
             <p>23 September</p>
         </div>
         <div class="phase">
-            <h3>SEMIFINAL</h3>
+            <div class="phase-number">04</div>
+            <h3>Semifinal</h3>
             <p>6 Oktober</p>
         </div>
         <div class="phase">
-            <h3>FINAL</h3>
+            <div class="phase-number">05</div>
+            <h3>Final</h3>
             <p>20 Oktober</p>
         </div>
     </div>
@@ -542,7 +560,7 @@ footer p {
 <section>
     <div class="timeline-header">
         <h2 class="section-title">
-            SELURUH AGENDA
+            Seluruh Agenda
         </h2>
         <div class="filters">
             <button class="filter active" data-month="all">
@@ -607,7 +625,7 @@ const events = [
 ];
 
 /* =========================
-   RENDER AGENDA
+   RENDER AGENDA WITH FLOW ARROWS
 ========================= */
 
 const agenda = document.getElementById("agenda");
@@ -617,7 +635,10 @@ function renderEvents(month = "all") {
     
     const filtered = month === "all" ? events : events.filter(event => event.month == month);
 
-    filtered.forEach(event => {
+    filtered.forEach((event, index) => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "agenda-item-wrapper";
+
         const card = document.createElement("div");
         card.className = "card" + (event.major ? " major" : "");
         card.innerHTML = `
@@ -626,7 +647,17 @@ function renderEvents(month = "all") {
             <h3>${event.title}</h3>
             ${event.badge ? `<div class="badge">${event.badge}</div>` : ""}
         `;
-        agenda.appendChild(card);
+        wrapper.appendChild(card);
+
+        // Tambahkan ikon panah ke bawah jika bukan elemen terakhir dalam list
+        if (index < filtered.length - 1) {
+            const arrow = document.createElement("div");
+            arrow.className = "flow-arrow";
+            arrow.innerHTML = `<i class="fa-solid fa-chevron-down"></i>`;
+            wrapper.appendChild(arrow);
+        }
+
+        agenda.appendChild(wrapper);
     });
 }
 renderEvents();
