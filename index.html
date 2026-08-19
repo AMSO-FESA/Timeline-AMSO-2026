@@ -47,18 +47,21 @@ body {
         radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.15), transparent 30%),
         linear-gradient(135deg, #050811, #0a0f1c);
     color: white;
-    padding: 55px 20px 45px;
+    padding: 65px 20px 55px;
     border-bottom: 1px solid var(--border);
 }
 
 .hero-inner {
     max-width: 1150px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Rata tengah semua isi hero */
 }
 
 .hero-top {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 30px;
 }
@@ -67,6 +70,10 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
+}
+
+.logo-text {
+    text-align: center; /* Teks logo rata tengah */
 }
 
 .logo-text small {
@@ -86,6 +93,7 @@ body {
     line-height: .95;
     letter-spacing: -3px;
     margin-top: 45px;
+    text-align: center; /* Judul rata tengah */
 }
 
 .text-neon {
@@ -96,10 +104,11 @@ body {
 }
 
 .hero-desc {
-    margin-top: 17px;
+    margin: 17px auto 0; /* Margin auto untuk ke tengah */
     color: var(--muted);
     max-width: 650px;
     font-size: 15px;
+    text-align: center; /* Deskripsi rata tengah */
 }
 
 /* =========================
@@ -113,53 +122,11 @@ body {
 }
 
 /* =========================
-   NEXT EVENT
-========================= */
-
-.next-event {
-    margin-top: -65px;
-    position: relative;
-    z-index: 5;
-    
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--border);
-    border-radius: 22px;
-    
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-}
-
-.next-label {
-    color: var(--gold);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-}
-
-.next-title {
-    font-size: 26px;
-    font-weight: 800;
-    color: var(--text);
-}
-
-.next-date {
-    color: var(--blue2);
-    margin-top: 8px;
-    font-size: 15px;
-    font-weight: 600;
-}
-
-/* =========================
    PROGRESS
 ========================= */
 
 .progress-section {
-    margin-top: 45px;
+    margin-top: 15px;
 }
 
 .section-title {
@@ -401,23 +368,14 @@ footer p {
     .agenda {
         grid-template-columns: repeat(2, 1fr);
     }
-    .hero-top {
-        align-items: flex-start;
-    }
 }
 
 @media(max-width: 600px) {
     .hero {
         padding-top: 35px;
     }
-    .hero-top {
-        flex-direction: column;
-    }
     .hero h1 {
         margin-top: 35px;
-    }
-    .next-event {
-        margin-top: -45px;
     }
     .phases,
     .agenda {
@@ -458,23 +416,6 @@ footer p {
 
 
 <main class="container">
-
-<!-- =========================
-     NEXT EVENT
-========================= -->
-
-<section class="next-event">
-    <div class="next-label">
-        ● Next Event
-    </div>
-    <div class="next-title" id="nextTitle">
-        Memuat agenda...
-    </div>
-    <div class="next-date" id="nextDate">
-        -
-    </div>
-</section>
-
 
 <!-- =========================
      PROGRESS
@@ -639,28 +580,6 @@ document.querySelectorAll(".filter").forEach(button => {
         renderEvents(button.dataset.month);
     });
 });
-
-
-/* =========================
-   NEXT EVENT (TANPA COUNTDOWN)
-========================= */
-
-function updateNextEvent() {
-    const now = new Date();
-    const next = events.find(event => new Date(event.date + "T23:59:59") >= now);
-
-    if (!next) {
-        document.getElementById("nextTitle").textContent = "AMSO 2026 telah selesai";
-        document.getElementById("nextDate").textContent = "-";
-        return;
-    }
-
-    document.getElementById("nextTitle").textContent = next.title;
-    document.getElementById("nextDate").textContent = next.display;
-}
-
-// Cukup panggil sekali, nggak perlu setInterval per detik lagi karena tidak ada countdown
-updateNextEvent();
 
 
 /* =========================
