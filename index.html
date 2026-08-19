@@ -202,7 +202,7 @@ body {
 }
 
 /* =========================
-   PHASES (TAHAPAN UTAMA - FIX SIMETRIS)
+   PHASES (TAHAPAN UTAMA - RATA TENGAH & SIMETRIS)
 ========================= */
 
 .phase-section {
@@ -223,10 +223,12 @@ body {
     border-radius: 16px;
     padding: 18px;
 
-    /* Perbaikan biar tinggi antar kotak rata/simetris */
+    /* Rata tengah dan simetris */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
     cursor: pointer;
     transition: .25s;
@@ -238,15 +240,9 @@ body {
     box-shadow: 0 12px 25px rgba(59, 130, 246, 0.15);
 }
 
-.phase-number {
-    font-size: 11px;
-    font-weight: 800;
-    color: var(--blue2);
-}
-
 .phase h3 {
-    margin-top: 7px;
-    font-size: 16px;
+    margin-top: 5px;
+    font-size: 15px;
     color: var(--text);
 }
 
@@ -486,7 +482,7 @@ footer p {
 
 <section class="progress-section">
     <h2 class="section-title">
-        Progress AMSO 2026
+        PROGRESS AMSO 2026
     </h2>
     <div class="progress-bar">
         <div class="progress-fill" id="progress"></div>
@@ -504,32 +500,27 @@ footer p {
 
 <section class="phase-section">
     <h2 class="section-title">
-        Tahapan Utama
+        TAHAPAN UTAMA
     </h2>
     <div class="phases">
         <div class="phase">
-            <div class="phase-number">01</div>
-            <h3>Tryout</h3>
+            <h3>TRYOUT</h3>
             <p>18 – 28 Agustus</p>
         </div>
         <div class="phase">
-            <div class="phase-number">02</div>
-            <h3>Seleksi Sekolah</h3>
+            <h3>SELEKSI SEKOLAH</h3>
             <p>8 – 11 September</p>
         </div>
         <div class="phase">
-            <div class="phase-number">03</div>
-            <h3>Penyisihan</h3>
+            <h3>PENYISIHAN</h3>
             <p>23 September</p>
         </div>
         <div class="phase">
-            <div class="phase-number">04</div>
-            <h3>Semifinal</h3>
+            <h3>SEMIFINAL</h3>
             <p>6 Oktober</p>
         </div>
         <div class="phase">
-            <div class="phase-number">05</div>
-            <h3>Final</h3>
+            <h3>FINAL</h3>
             <p>20 Oktober</p>
         </div>
     </div>
@@ -543,7 +534,7 @@ footer p {
 <section>
     <div class="timeline-header">
         <h2 class="section-title">
-            Seluruh Agenda
+            SELURUH AGENDA
         </h2>
         <div class="filters">
             <button class="filter active" data-month="all">
