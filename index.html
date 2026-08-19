@@ -49,7 +49,7 @@ body {
         radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.15), transparent 30%),
         linear-gradient(135deg, #050811, #0a0f1c);
     color: white;
-    padding: 40px 20px 55px; /* Diubah jadi 40px biar sejajar persis dgn beranda */
+    padding: 40px 20px 55px; 
     border-bottom: 1px solid var(--border);
     position: relative; 
 }
@@ -98,7 +98,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 30px;
-    margin-bottom: 25px; /* Disamakan dgn halaman utama */
+    margin-bottom: 25px; 
     flex-wrap: wrap;
 }
 
@@ -124,15 +124,16 @@ body {
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
 }
 
-.logo-item img[src="yasarini.png"] { height: 65px !important; }
-.logo-item img[src="fesa.png"] { height: 100px !important; }
-.logo-item img[src="amso.png"] { height: 100px !important; }
+/* PERBAIKAN UKURAN LOGO - Nembak ke alt text biar anti gagal */
+.logo-item img[alt="Logo Yasarini"] { height: 65px !important; }
+.logo-item img[alt="Logo FESA"] { height: 100px !important; }
+.logo-item img[alt="Logo AMSO"] { height: 100px !important; }
 
 .hero h1 {
     font-size: clamp(38px, 6vw, 68px);
     line-height: .95;
     letter-spacing: -3px;
-    margin-top: 0; /* Diubah ke 0 agar jarak ke logo pas kayak beranda */
+    margin-top: 0; 
     text-align: center; 
 }
 
@@ -226,13 +227,13 @@ body {
     cursor: pointer;
     transition: .25s;
 
-    /* TAMBAHAN BIAR SIMETRIS & RATA TENGAH */
+    /* RATA TENGAH SIMETRIS */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100%; /* Biar tinggi semua kotak sama rata */
+    height: 100%; 
 }
 
 .phase:hover {
@@ -420,7 +421,7 @@ footer p {
 
 @media(max-width: 600px) {
     .hero {
-        padding-top: 60px; /* Disesuaikan utk mobile */
+        padding-top: 60px; 
     }
     .hero h1 {
         margin-top: 10px;
@@ -511,23 +512,28 @@ footer p {
     </h2>
     <div class="phases">
         <div class="phase">
-            <h3>TRYOUT</h3>
+            <div class="phase-number">01</div>
+            <h3>Tryout</h3>
             <p>18 – 28 Agustus</p>
         </div>
         <div class="phase">
-            <h3>SELEKSI SEKOLAH</h3>
+            <div class="phase-number">02</div>
+            <h3>Seleksi Sekolah</h3>
             <p>8 – 11 September</p>
         </div>
         <div class="phase">
-            <h3>PENYISIHAN</h3>
+            <div class="phase-number">03</div>
+            <h3>Penyisihan</h3>
             <p>23 September</p>
         </div>
         <div class="phase">
-            <h3>SEMIFINAL</h3>
+            <div class="phase-number">04</div>
+            <h3>Semifinal</h3>
             <p>6 Oktober</p>
         </div>
         <div class="phase">
-            <h3>FINAL</h3>
+            <div class="phase-number">05</div>
+            <h3>Final</h3>
             <p>20 Oktober</p>
         </div>
     </div>
