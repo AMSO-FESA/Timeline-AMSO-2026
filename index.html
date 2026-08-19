@@ -17,13 +17,13 @@
 }
 
 :root {
-    --blue: #8b5cf6;       
-    --blue2: #3b82f6;      
-    --navy: #0f172a;       
-    --gold: #22d3ee;       
-    --bg: #0b0f19;         
-    --text: #f8fafc;       
-    --muted: #94a3b8;      
+    --blue: #8b5cf6;        
+    --blue2: #3b82f6;       
+    --navy: #0f172a;        
+    --gold: #22d3ee;        
+    --bg: #0b0f19;          
+    --text: #f8fafc;        
+    --muted: #94a3b8;       
     --white: #ffffff;
     --border: rgba(255, 255, 255, 0.1);
     --glass-bg: rgba(15, 23, 42, 0.6); 
@@ -202,7 +202,7 @@ body {
 }
 
 /* =========================
-   PHASES
+   PHASES (TAHAPAN UTAMA - FIX SIMETRIS)
 ========================= */
 
 .phase-section {
@@ -222,6 +222,11 @@ body {
     border: 1px solid var(--border);
     border-radius: 16px;
     padding: 18px;
+
+    /* Perbaikan biar tinggi antar kotak rata/simetris */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     cursor: pointer;
     transition: .25s;
