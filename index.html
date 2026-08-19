@@ -50,7 +50,7 @@ body {
         radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.15), transparent 30%),
         linear-gradient(135deg, #050811, #0a0f1c);
     color: white;
-    padding: 40px 20px 55px; 
+    padding: 30px 20px 55px; 
     border-bottom: 1px solid var(--border);
     position: relative; 
 }
@@ -63,7 +63,7 @@ body {
     align-items: center; 
 }
 
-/* Logo Group */
+/* Logo Group (Paling Atas) */
 .logo-group {
     display: flex;
     justify-content: center;
@@ -99,31 +99,7 @@ body {
 .logo-item img[src="fesa.png"] { height: 100px !important; }
 .logo-item img[src="amso.png"] { height: 100px !important; }
 
-.hero h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(38px, 6vw, 68px);
-    line-height: .95;
-    letter-spacing: -3px;
-    margin-top: 15px; 
-    text-align: center; 
-}
-
-.text-neon {
-    background: linear-gradient(90deg, var(--gold), var(--blue2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-}
-
-.hero-desc {
-    margin: 17px auto 0; 
-    color: var(--muted);
-    max-width: 650px;
-    font-size: 15px;
-    text-align: center; 
-}
-
-/* Navigation Menu */
+/* Navigation Menu (Di Bawah Logo, Di Atas Judul) */
 nav {
     background: rgba(15, 21, 42, 0.8);
     border: 1px solid var(--border);
@@ -135,7 +111,7 @@ nav {
     flex-wrap: wrap;
     justify-content: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    margin-top: 25px;
+    margin-bottom: 30px;
 }
 
 nav a {
@@ -204,6 +180,31 @@ nav a:hover, nav a.active {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+/* Title Area (Paling Bawah di Header) */
+.hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: .95;
+    letter-spacing: -3px;
+    margin-top: 5px; 
+    text-align: center; 
+}
+
+.text-neon {
+    background: linear-gradient(90deg, var(--gold), var(--blue2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.hero-desc {
+    margin: 12px auto 0; 
+    color: var(--muted);
+    max-width: 650px;
+    font-size: 15px;
+    text-align: center; 
 }
 
 /* =========================
@@ -467,7 +468,7 @@ footer p {
 
 @media(max-width: 600px) {
     .hero {
-        padding-top: 40px; 
+        padding-top: 30px; 
     }
     .phases,
     .agenda {
@@ -490,7 +491,7 @@ footer p {
 <header class="hero">
     <div class="hero-inner">
         
-        <!-- LOGO GROUP -->
+        <!-- 1. LOGO GROUP (Paling Atas) -->
         <div class="logo-group">
             <div class="logo-item">
                 <img src="yasarini.png" alt="Logo Yasarini" title="Yayasan Ardhya Garini">
@@ -503,14 +504,7 @@ footer p {
             </div>
         </div>
 
-        <h1><span class="text-neon">TIMELINE AMSO 2026</span></h1>
-
-        <p class="hero-desc">
-            RANGKAIAN LENGKAP PELAKSANAAN AMSO 2026,
-            DARI TAHAP TRYOUT HINGGA PENGUMUMAN PEMENANG
-        </p>
-
-        <!-- NAVBAR UTAMA -->
+        <!-- 2. NAVBAR UTAMA (Di Bawah Logo, Di Atas Judul) -->
         <nav>
             <a href="https://amso-fesa.github.io/AMSO-2026/"><i class="fa-solid fa-house"></i> Beranda</a>
             <a href="https://amso-fesa.github.io/Timeline-AMSO-2026/" class="active"><i class="fa-solid fa-calendar-days"></i> Timeline</a>
@@ -527,6 +521,14 @@ footer p {
 
             <a href="#"><i class="fa-solid fa-trophy"></i> Pengumuman</a>
         </nav>
+
+        <!-- 3. JUDUL UTAMA & DESKRIPSI (Paling Bawah di Header) -->
+        <h1><span class="text-neon">TIMELINE AMSO 2026</span></h1>
+
+        <p class="hero-desc">
+            RANGKAIAN LENGKAP PELAKSANAAN AMSO 2026,
+            DARI TAHAP TRYOUT HINGGA PENGUMUMAN PEMENANG
+        </p>
     </div>
 </header>
 
