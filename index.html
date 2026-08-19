@@ -6,8 +6,9 @@
 
 <title>Timeline AMSO 2026</title>
 
-<!-- FontAwesome untuk Icon Panah -->
+<!-- FontAwesome untuk Icon -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -34,13 +35,13 @@ html {
 }
 
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     background: var(--bg);
     color: var(--text);
 }
 
 /* =========================
-   HERO & TOMBOL KEMBALI
+   HERO & HEADER NAVIGATION
 ========================= */
 
 .hero {
@@ -54,34 +55,6 @@ body {
     position: relative; 
 }
 
-/* CSS Tombol Kembali */
-.btn-back {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--text);
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 600;
-    background: var(--glass-bg);
-    border: 1px solid var(--border);
-    padding: 8px 16px;
-    border-radius: 30px;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    z-index: 10;
-}
-
-.btn-back:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--blue2);
-    color: var(--blue2);
-    transform: translateX(-4px); 
-}
-
 .hero-inner {
     max-width: 1150px;
     margin: auto;
@@ -90,9 +63,7 @@ body {
     align-items: center; 
 }
 
-/* =========================
-   LOGO GROUP TIMELINE
-========================= */
+/* Logo Group */
 .logo-group {
     display: flex;
     justify-content: center;
@@ -129,10 +100,11 @@ body {
 .logo-item img[src="amso.png"] { height: 100px !important; }
 
 .hero h1 {
+    font-family: 'Orbitron', sans-serif;
     font-size: clamp(38px, 6vw, 68px);
     line-height: .95;
     letter-spacing: -3px;
-    margin-top: 0; 
+    margin-top: 15px; 
     text-align: center; 
 }
 
@@ -149,6 +121,89 @@ body {
     max-width: 650px;
     font-size: 15px;
     text-align: center; 
+}
+
+/* Navigation Menu */
+nav {
+    background: rgba(15, 21, 42, 0.8);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 8px;
+    backdrop-filter: blur(12px);
+    display: inline-flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    margin-top: 25px;
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav a:hover, nav a.active {
+    color: #fff;
+    background: linear-gradient(135deg, rgba(0, 210, 255, 0.3), rgba(157, 78, 221, 0.3));
+    border: 1px solid rgba(0, 210, 255, 0.5);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+}
+
+/* ================= DROPDOWN MENU ================= */
+.dropdown {
+    position: relative;
+    display: inline-flex;
+    padding-bottom: 15px;
+    margin-bottom: -15px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(15, 21, 42, 0.95);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    min-width: 190px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    backdrop-filter: blur(15px);
+    z-index: 100;
+    padding: 8px;
+    text-align: left;
+}
+
+.dropdown-content a {
+    color: var(--muted);
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.dropdown-content a:hover {
+    background: rgba(0, 210, 255, 0.15);
+    color: #00d2ff;
+    border: none;
+    box-shadow: none;
+    transform: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* =========================
@@ -202,7 +257,7 @@ body {
 }
 
 /* =========================
-   PHASES (TAHAPAN UTAMA - RATA TENGAH & SIMETRIS)
+   PHASES
 ========================= */
 
 .phase-section {
@@ -223,7 +278,6 @@ body {
     border-radius: 16px;
     padding: 18px;
 
-    /* Rata tengah dan simetris */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -413,10 +467,7 @@ footer p {
 
 @media(max-width: 600px) {
     .hero {
-        padding-top: 60px; 
-    }
-    .hero h1 {
-        margin-top: 10px;
+        padding-top: 40px; 
     }
     .phases,
     .agenda {
@@ -426,12 +477,6 @@ footer p {
         align-items: flex-start;
         flex-direction: column;
     }
-    .btn-back {
-        top: 15px;
-        left: 15px;
-        padding: 6px 12px;
-        font-size: 11px;
-    }
 }
 </style>
 </head>
@@ -439,19 +484,13 @@ footer p {
 <body>
 
 <!-- =========================
-     HERO
+     HERO & NAVBAR
 ========================= -->
 
 <header class="hero">
-
-    <!-- TOMBOL KEMBALI KE HALAMAN UTAMA -->
-    <a href="https://amso-fesa.github.io/AMSO-2026/" class="btn-back">
-        <i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda
-    </a>
-
     <div class="hero-inner">
         
-        <!-- LOGO GROUP SEBAGAI PENGGANTI TEKS -->
+        <!-- LOGO GROUP -->
         <div class="logo-group">
             <div class="logo-item">
                 <img src="yasarini.png" alt="Logo Yasarini" title="Yayasan Ardhya Garini">
@@ -470,6 +509,24 @@ footer p {
             RANGKAIAN LENGKAP PELAKSANAAN AMSO 2026,
             DARI TAHAP TRYOUT HINGGA PENGUMUMAN PEMENANG
         </p>
+
+        <!-- NAVBAR UTAMA -->
+        <nav>
+            <a href="https://amso-fesa.github.io/AMSO-2026/"><i class="fa-solid fa-house"></i> Beranda</a>
+            <a href="https://amso-fesa.github.io/Timeline-AMSO-2026/" class="active"><i class="fa-solid fa-calendar-days"></i> Timeline</a>
+            <a href="https://amso-fesa.github.io/Kategori-AMSO-2026/"><i class="fa-solid fa-layer-group"></i> Kategori</a>
+            <a href="#"><i class="fa-solid fa-clipboard-check"></i> Buku Panduan</a>
+            
+            <div class="dropdown">
+                <a href="#"><i class="fa-solid fa-folder-open"></i> Data <i class="fa-solid fa-angle-down" style="font-size: 10px; margin-left: 2px;"></i></a>
+                <div class="dropdown-content">
+                    <a href="https://amso-fesa.github.io/Data-Peserta-AMSO-2026/"><i class="fa-solid fa-users" style="margin-right: 6px;"></i> Data awal peserta</a>
+                    <a href="https://amso-fesa.github.io/Persuratan-AMSO-2026/"><i class="fa-solid fa-envelope-open-text" style="margin-right: 6px;"></i> Persuratan</a>
+                </div>
+            </div>
+
+            <a href="#"><i class="fa-solid fa-trophy"></i> Pengumuman</a>
+        </nav>
     </div>
 </header>
 
@@ -595,7 +652,7 @@ const events = [
 { no: 18, date: "2026-10-19", display: "Senin, 19 Oktober 2026", title: "Gladi Jaringan dan Soal Babak Final AMSO", month: 10 },
 { no: 19, date: "2026-10-20", display: "Selasa, 20 Oktober 2026", title: "Pelaksanaan Babak Final AMSO", month: 10, major: true, badge: "FINAL" },
 { no: 20, date: "2026-10-21", display: "Rabu, 21 Oktober 2026", title: "Batas Akhir Pengiriman Berita Acara & Absensi Babak Final", month: 10 },
-{ no: 21, date: "2026-12-15", display: "Selasa, 15 Desember 2026", title: "Pengumuman Pemenang AMSO 2026", month: 12, major: true, }
+{ no: 21, date: "2026-12-15", display: "Selasa, 15 Desember 2026", title: "Pengumuman Pemenang AMSO 2026", month: 12, major: true }
 ];
 
 /* =========================
