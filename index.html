@@ -51,7 +51,7 @@ body {
     color: white;
     padding: 65px 20px 55px;
     border-bottom: 1px solid var(--border);
-    position: relative; /* Wajib biar tombol kembali posisinya pas */
+    position: relative; 
 }
 
 /* CSS Tombol Kembali */
@@ -90,40 +90,51 @@ body {
     align-items: center; 
 }
 
-.hero-top {
+/* =========================
+   TAMBAHAN LOGO GROUP (Sama persis dgn beranda)
+========================= */
+.logo-group {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
 }
 
-.logo-area {
+.logo-item {
+    background: transparent;
+    padding: 0;
     display: flex;
     align-items: center;
-    gap: 15px;
+    justify-content: center;
+    border: none;
+    box-shadow: none;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.logo-text {
-    text-align: center; 
+.logo-item:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 12px rgba(0, 210, 255, 0.6));
 }
 
-.logo-text small {
-    display: block;
-    font-size: 11px;
-    opacity: .65;
-    letter-spacing: 1.5px;
+.logo-item img {
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
 }
 
-.logo-text strong {
-    font-size: 18px;
-    color: var(--text);
-}
+/* Mengambil gambar langsung dari repo AMSO-2026 lo */
+.logo-item img[alt="Logo Yasarini"] { height: 65px !important; }
+.logo-item img[alt="Logo FESA"] { height: 100px !important; }
+.logo-item img[alt="Logo AMSO"] { height: 100px !important; }
+
 
 .hero h1 {
     font-size: clamp(38px, 6vw, 68px);
     line-height: .95;
     letter-spacing: -3px;
-    margin-top: 45px;
+    margin-top: 15px; 
     text-align: center; 
 }
 
@@ -434,17 +445,22 @@ footer p {
 
 <header class="hero">
 
-    <!-- INI TOMBOL KEMBALINYA (Ganti tulisan LINK_WEB_UTAMA_LO_DISINI) -->
-    <a href="https://amso-fesa.github.io/AMSO-2026/" class="btn-back">
+    <!-- TOMBOL KEMBALI KE BERANDA (Link Asli) -->
+    <a href="https://amso-fesa.github.io/AMSO-2026" class="btn-back">
         <i class="fa-solid fa-arrow-left"></i> Kembali
     </a>
 
     <div class="hero-inner">
-        <div class="hero-top">
-            <div class="logo-area">
-                <div class="logo-text">
-                    <strong>ANGKASA MATHEMATIC AND SCIENCE OLYMPIAD</strong>
-                </div>
+        <!-- LOGO DARI BERANDA -->
+        <div class="logo-group">
+            <div class="logo-item">
+                <img src="https://raw.githubusercontent.com/AMSO-FESA/AMSO-2026/main/yasarini.png" alt="Logo Yasarini" title="Yayasan Ardhya Garini">
+            </div>
+            <div class="logo-item">
+                <img src="https://raw.githubusercontent.com/AMSO-FESA/AMSO-2026/main/fesa.png" alt="Logo FESA" title="Festival Edukasi Sekolah Angkasa">
+            </div>
+            <div class="logo-item">
+                <img src="https://raw.githubusercontent.com/AMSO-FESA/AMSO-2026/main/amso.png" alt="Logo AMSO" title="Angkasa Mathematic and Science Olympiad">
             </div>
         </div>
 
